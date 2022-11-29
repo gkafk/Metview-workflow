@@ -30,7 +30,9 @@
 - Install
 
     cd to downloaded files directory
+    
     cd Constructors
+    
     $./add_jobs_to_cron.sh to start the installation.
 
 

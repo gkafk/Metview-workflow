@@ -29,10 +29,9 @@
 
 - Install
 
-    cd to downloaded files directory
-    
+    cd to downloaded files directory    
     cd Constructors
-    
+    Configure global_variables.cfg file according to your pc configuration.    
     $./add_jobs_to_cron.sh to start the installation.
 
 

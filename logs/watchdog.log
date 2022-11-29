@@ -1,0 +1,62 @@
+2022-10-15 23:14:46 - Checking for folders not in processes
+2022-10-15 23:14:46 - checking 20220910 0000
+2022-10-15 23:14:46 - 20220910 0000 not in log.
+2022-10-15 23:14:46 - folder /home/george/data/input_db/20220910 got 173 files
+2022-10-15 23:14:46 -  20220910 0000 Starting process
+******* Merging was not configured to be executed ***********
+Traceback (most recent call last):
+  File "/home/george/data/Pythonics/plot_images.py", line 6, in <module>
+    from products import *
+  File "/home/george/data/Pythonics/products.py", line 11, in <module>
+    import globalVariables as gbl
+  File "/home/george/data/Pythonics/globalVariables.py", line 57, in <module>
+    ["Temperature",             "850",  time_steps],
+NameError: name 'time_steps' is not defined
+-------------- end of forecasting maps production  --------------
+******* meteograms production were not configured to be executed ***********
+sed: -e expression #1, char 22: unterminated `s' command
+******* route weather maps were not configured to be executed ***********
+sed: -e expression #1, char 21: unterminated `s' command
+2022-10-15 23:14:59 - End of production process
+2022-10-15 23:17:49 - Checking for folders not in processes
+2022-10-15 23:17:49 - checking 20220910 0000
+2022-10-15 23:17:49 - 20220910 0000 not in log.
+2022-10-15 23:17:49 - folder /home/george/data/input_db/20220910 got 173 files
+2022-10-15 23:17:49 -  20220910 0000 Starting process
+******* Merging was not configured to be executed ***********
+OUTPUT_FOLDER: /home/george/data/output/
+IMAGES_EXPORT_DIR: /home/george/data/images/
+20221015 23
+2022-10-15 23:17:50  - Start producing images for meteo ata
+2022-10-15 23:17:50  -  Temperature 850
+2022-10-15 23:17:50  -  Temperature 500 500
+2022-10-15 23:17:50  -  Potential vorticity isentropic 315
+2022-10-15 23:20:20  - Forecast maps production ended in 0:02:29.402170 seconds
+-------------- end of forecasting maps production  --------------
+******* meteograms production were not configured to be executed ***********
+sed: -e expression #1, char 22: unterminated `s' command
+******* route weather maps were not configured to be executed ***********
+sed: -e expression #1, char 21: unterminated `s' command
+2022-10-15 23:20:20 - End of production process
+2022-10-16 00:16:46 - Checking for folders not in processes
+2022-10-16 00:16:46 - checking 20220910 0000
+2022-10-16 00:16:46 - 20220910 0000 not in log.
+2022-10-16 00:16:46 - folder /home/george/data/input_db/20220910 got 173 files
+2022-10-16 00:16:46 -  20220910 0000 Starting process
+******* Merging was not configured to be executed ***********
+******* forecasting maps production were not configured to be executed ***********
+******* meteograms production were not configured to be executed ***********
+sed: -e expression #1, char 22: unterminated `s' command
+******* route weather maps were not configured to be executed ***********
+sed: -e expression #1, char 21: unterminated `s' command
+2022-10-16 00:16:46 - End of production process
+2022-10-16 00:18:11 - Checking for folders not in processes
+2022-10-16 00:18:11 - checking 20220910 0000
+2022-10-16 00:18:11 - 20220910 0000 not in log.
+2022-10-16 00:18:11 - folder /home/george/data/input_db/20220910 got 173 files
+2022-10-16 00:18:11 -  20220910 0000 Starting process
+******* Merging was not configured to be executed ***********
+******* forecasting maps production were not configured to be executed ***********
+******* meteograms production were not configured to be executed ***********
+******* route weather maps were not configured to be executed ***********
+2022-10-16 00:18:11 - End of production process

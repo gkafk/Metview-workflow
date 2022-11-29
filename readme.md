@@ -1,5 +1,5 @@
 # Metview-workflow:
-## It is a bunch of scripts for producing weather forecasting images from ECMWF grib files.
+## It is a bunch of scripts for producing weather forecasting images using ECMWF grib files.
 ## Uses ECMWF Metview for automated weather forecasting images production or grib files viewing. Receives ECMWF grib files in the directory ECMWF. Reconstructs downloaded grib files of one step grib containing all variables in grib files of the same variable merged to one grib file with all steps inside the directory output and subdirectories according to variable name and lower subdirectories of the levels of the product.
 
 - Requirements

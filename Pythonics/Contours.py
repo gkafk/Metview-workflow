@@ -183,7 +183,7 @@ AH_1 = mv.mcont(
    )
 
 AH_2 = mv.mcont(
-   LEGEND                       = "ON",
+   LEGEND                                  = "ON",
    CONTOUR_LINE_STYLE                      = "DASH",
    CONTOUR_LINE_THICKNESS                  = 3,
    CONTOUR_LINE_COLOUR_RAINBOW             = "ON",

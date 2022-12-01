@@ -1,7 +1,7 @@
 '''
-Εδώ κατασκευάζονται όλα τα αντικείμενα των contours
-Τα χρησιμοποιούμε στο λεξικό contours_dict και τα καλούμε στη συνάρτηση plotter
-στη γραμμή contours    = contours_dict[contours_var.get()]
+Constructing contour objects.
+Using them in dictionary contours_dict call on plotter function
+contours    = contours_dict[contours_var.get()]
 '''
 import metview as mv
 
@@ -33,7 +33,7 @@ ecchart = mv.mcont(
     contour_automatic_setting = 'ecchart'
         )
 
-# contour για τη θερμοκρασία
+# contour for temperature
 Temp = mv.mcont(
    LEGEND                       = "ON",
    CONTOUR                      = "OFF",
@@ -74,7 +74,7 @@ PT = mv.mcont(
    )
 
 
-# contour για θερμοκρασία στα 2 μέτρα
+# contour for 2 m temperature 
 sfc_T2m_1 = mv.mcont(
    LEGEND                       = "ON",
    CONTOUR                      = "OFF",
@@ -104,19 +104,19 @@ sfc_T2m_2 = mv.mcont(
    CONTOUR_SHADE_PALETTE_NAME   = "eccharts_rainbow_blue_magenta_53"
    )
 
-# contour για μεσαία νέφη
+# contour for medium cloud cover MCC
 MCC = mv.mcont(
-            LEGEND                      = "ON",
-               CONTOUR                     = "OFF",
-               CONTOUR_LEVEL_TOLERANCE     = 1,
-               CONTOUR_LABEL               = "OFF",
-               CONTOUR_SHADE               = "ON",
-               CONTOUR_SHADE_COLOUR_METHOD = "LIST",
-               CONTOUR_SHADE_METHOD        = "AREA_FILL",
-               CONTOUR_SHADE_COLOUR_LIST   = [ "RGBA(0.9906,0.9373,1,0)","RGBA(0.9729,0.8196,1,0.7059)","RGBA(0.9553,0.702,1,0.7059)","RGBA(0.9377,0.5843,1,0.7059)","RGBA(0.92,0.4667,1,0.7059)","RGBA(0.9024,0.349,1,0.7059)","RGBA(0.8847,0.2314,1,0.7059)","RGBA(0.8682,0.1216,1,0.7059)","RGBA(0.8549,0,1,0.7059)" ]
+   LEGEND                      = "ON",
+   CONTOUR                     = "OFF",
+   CONTOUR_LEVEL_TOLERANCE     = 1,
+   CONTOUR_LABEL               = "OFF",
+   CONTOUR_SHADE               = "ON",
+   CONTOUR_SHADE_COLOUR_METHOD = "LIST",
+   CONTOUR_SHADE_METHOD        = "AREA_FILL",
+   CONTOUR_SHADE_COLOUR_LIST   = [ "RGBA(0.9906,0.9373,1,0)","RGBA(0.9729,0.8196,1,0.7059)","RGBA(0.9553,0.702,1,0.7059)","RGBA(0.9377,0.5843,1,0.7059)","RGBA(0.92,0.4667,1,0.7059)","RGBA(0.9024,0.349,1,0.7059)","RGBA(0.8847,0.2314,1,0.7059)","RGBA(0.8682,0.1216,1,0.7059)","RGBA(0.8549,0,1,0.7059)" ]
    )
 
-# contour για υψηλά νέφη
+# contour for High cloud cover HCC
 HCC = mv.mcont(
    LEGEND                      = "ON",
    CONTOUR                     = "OFF",
@@ -128,7 +128,7 @@ HCC = mv.mcont(
    CONTOUR_SHADE_COLOUR_LIST   = [ "RGBA(0.8942,0.9501,0.8303,0)","RGBA(0.8375,0.9233,0.7395,0.7059)","RGBA(0.7808,0.8965,0.6486,0.7059)","RGBA(0.7241,0.8698,0.5577,0.7059)","RGBA(0.6674,0.843,0.4668,0.7059)","RGBA(0.6108,0.8163,0.3759,0.7059)","RGBA(0.5541,0.7895,0.285,0.7059)","RGBA(0.4958,0.7392,0.2176,0.7059)","RGBA(0.4235,0.651,0.1922,0.7059)" ]
    )
 
-# contour για χαμηλά νέφη
+# contour for Low cloud cover LCC
 LCC=mv.mcont(
    LEGEND                      = "ON",
    CONTOUR                     = "OFF",
@@ -140,7 +140,7 @@ LCC=mv.mcont(
    CONTOUR_SHADE_COLOUR_LIST   = [ "RGBA(1,0.9038,0.8196,0)","RGBA(1,0.841,0.702,0.7059)","RGBA(1,0.7783,0.5843,0.7059)","RGBA(1,0.7156,0.4667,0.7059)","RGBA(1,0.6528,0.349,0.7059)","RGBA(1,0.5901,0.2314,0.7059)","RGBA(1,0.5273,0.1137,0.7059)","RGBA(0.9961,0.4648,0,0.7059)","RGBA(0.8784,0.4099,0,0.7059)" ]
    )
 
-# contour για σχετική υγρασία
+# contour for relative humidity RH
 RH_1 = mv.mcont(
    LEGEND                       = "ON",
    CONTOUR                      = "OFF",
@@ -168,7 +168,7 @@ RH_2 = mv.mcont(
    CONTOUR_SHADE_COLOUR_LIST    = [ "RGB(0.6827,0.9487,0.696)","RGB(0.412,0.9684,0.8015)","RGB(0.3444,0.7112,0.9732)","RGB(0.4707,0.4872,0.9646)" ]
    )
 
-# contour για απόλυτη υγρασία
+# contour for absolute humidity AH
 AH_1 = mv.mcont(
    LEGEND                       = "ON",
    CONTOUR                      = "OFF",
@@ -195,7 +195,7 @@ AH_2 = mv.mcont(
    CONTOUR_LABEL_HEIGHT                    = 0.5
    )
 
-# contour για γεοδυναμικά ύψη
+# contour for geopotential heights
 geo = mv.mcont(
        CONTOUR_LINE_THICKNESS       = 3,
        CONTOUR_LINE_COLOUR          = "BLACK",
@@ -308,7 +308,7 @@ run_difference = mv.mcont(
    CONTOUR_SHADE_PALETTE_NAME   = "eccharts_grey_red_25"
    )
 
-# contour για μέση πίεση επιφανείας
+# contour surface level pressure
 SFC_MSLP_line_1 = mv.mcont(
    LEGEND                       = "OFF",
    CONTOUR_LINE_THICKNESS       = 3,
@@ -344,7 +344,7 @@ MSLP_white = mv.mcont(
    CONTOUR_LABEL_BLANKING       = "OFF"
    )
 
-# contour για σημείο δρόσου
+# contour for Due Point
 Td_1 = mv.mcont(
    LEGEND                       = "ON",
    CONTOUR                      = "OFF",
@@ -373,7 +373,7 @@ Td_2 = mv.mcont(
    CONTOUR_SHADE_PALETTE_NAME   = "eccharts_rainbow_blue_magenta_53"
    )
 
-# contour για relative vorticity
+# contour for relative vorticity
 RV = mv.mcont(
    LEGEND                       = "ON",
    CONTOUR                      = "OFF",
@@ -426,7 +426,7 @@ PV_3 = mv.mcont(
 
 
 
-# contour για Vertical Velocity
+# contour for Vertical Velocity
 VV = mv.mcont(
    LEGEND                       = "ON",
    CONTOUR                      = "OFF",
@@ -440,7 +440,7 @@ VV = mv.mcont(
    CONTOUR_SHADE_PALETTE_NAME   = "eccharts_violet_brown_19"
    )
 
-# contour για RH_VV
+# contour for RH_VV
 VV_pos_line = mv.mcont(
    CONTOUR_LINE_THICKNESS       = 3,
    CONTOUR_LINE_COLOUR          = "YELLOWISH_ORANGE",
@@ -462,7 +462,7 @@ VV_neg_line = mv.mcont(
    )
 
 
-# contour για ορατότητα
+# contour for visibility
 visibility = mv.mcont(
    LEGEND                       = "ON",
    CONTOUR                      = "OFF",
@@ -475,7 +475,7 @@ visibility = mv.mcont(
    CONTOUR_SHADE_PALETTE_NAME   = "eccharts_rainbow_magenta_grey_13"
    )
 
-# contour για ύψος κύματος
+# contour for wave height
 wave_height = mv.mcont(
    LEGEND                       = "ON",
    CONTOUR                      = "OFF",
@@ -488,7 +488,7 @@ wave_height = mv.mcont(
    CONTOUR_SHADE_PALETTE_NAME   = "eccharts_rainbow_blue_charcoal_11"
    )
 
-# contour για θερμοκρασία θάλλασας SST
+# contour for sea temperature SST
 SST = mv.mcont(
    LEGEND                       = "ON",
    CONTOUR                      = "OFF",
@@ -501,7 +501,7 @@ SST = mv.mcont(
    CONTOUR_SHADE_PALETTE_NAME   = "eccharts_rainbow_purple_red_19"
    )
 
-# contour για χιονόπτωση
+# contour for snowfall
 snowfall_1 = mv.mcont(
    LEGEND                       = "ON",
    CONTOUR                      = "OFF",
@@ -557,7 +557,7 @@ snow_dots = mv.mcont(
    CONTOUR_SHADE_DOT_SIZE       = 0.09
    )
 
-# contour για  βάση νεφών
+# contour for cloud base
 cloud_base = mv.mcont(
    LEGEND                       = "ON",
    CONTOUR                      = "OFF",
@@ -570,7 +570,7 @@ cloud_base = mv.mcont(
    CONTOUR_SHADE_PALETTE_NAME   = "eccharts_rainbow_magenta_grey_13"
    )
 
-# contour για CAPE
+# contour for CAPE
 CAPE = mv.mcont(
    LEGEND                       = "ON",
    CONTOUR                      = "OFF",
@@ -583,7 +583,7 @@ CAPE = mv.mcont(
    CONTOUR_SHADE_PALETTE_NAME   = "eccharts_rainbow_blue_purple_11"
    )
 
-# contour για υετό
+# contour for total precipitation
 total_preci_1 = mv.mcont(
    LEGEND                       = "ON",
    CONTOUR                      = "OFF",
@@ -597,7 +597,7 @@ total_preci_1 = mv.mcont(
    CONTOUR_SHADE_PALETTE_NAME   = "eccharts_blue_red_8"
    )
 
-# contour για ανέμους
+# contour for wind
 wspd_1 = mv.mcont(
    LEGEND                       = "ON",
    CONTOUR                      = "OFF",
@@ -728,7 +728,7 @@ mis_T2m = mv.mcont(
    CONTOUR_GRID_VALUE_MARKER_HEIGHT = 0.3
    )
 
-# Opera contoures
+# Opera contours
 opera_preci = mv.mcont(
    LEGEND                       = "ON",
    CONTOUR                      = "OFF",
@@ -908,7 +908,7 @@ therm_wind = mv.mcont(
    CONTOUR_SHADE_PALETTE_NAME   = "m_yellow_red_16"
    )
 
-# δείκτης δυσφορίας
+# contour for discomfort index
 di = mv.mcont(
    LEGEND                       = "ON",
    CONTOUR                      = "OFF",
@@ -1028,7 +1028,7 @@ zero_level = mv.mcont(
    CONTOUR_SHADE_METHOD         = "AREA_FILL",
    CONTOUR_SHADE_PALETTE_NAME   = "eccharts_rainbow_purple_pink_15"
    )
-# preci type
+# preci type contour
 preci_type = mv.mcont(
    LEGEND                       = "ON",
    CONTOUR                      = "OFF",
@@ -1041,7 +1041,7 @@ preci_type = mv.mcont(
    CONTOUR_SHADE_COLOUR_LIST    = [ "GREEN","RED","BLUE","NAVY","SKY","ORANGE" ]
    )
 
-# total_preci_rate
+# total_preci_rate contour
 total_preci_rate = mv.mcont(
    LEGEND                       = "ON",
    CONTOUR                      = "OFF",
@@ -1055,7 +1055,7 @@ total_preci_rate = mv.mcont(
    CONTOUR_SHADE_PALETTE_NAME   = "eccharts_rainbow_cyan_white_15"
    )
 
-# Q-vectors
+# Q-vectors contour
 PT_Q = mv.mcont(
    LEGEND                       = "ON",
    CONTOUR                      = "OFF",

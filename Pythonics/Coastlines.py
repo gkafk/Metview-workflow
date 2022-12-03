@@ -1,3 +1,8 @@
+'''
+Constructing coastline objects.
+Using them in dictionary coastlines_dict call on plotter function
+'''
+
 import metview as mv
 
 black = mv.mcoast(

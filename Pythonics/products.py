@@ -151,39 +151,6 @@ def synoptics_def(products_folder, gribs, contours, coast, maps, legend, text, l
     data_coast  = coastlines_dict[coast]
     return data_map,  data_coast,t850,t850_contour, t500,t500_contour,gh500,gh500_contour,mslp,mslp_contour, data_legend, data_txt
 
-# # συνάρτηση για πλωτάρισμα κρίσιμα όρια
-# def critical_def(products_folder, gribs, contours, coast, maps, legend, text, level, steps ):
-#     # get grib data
-#     t2m  = return_grib_data( products_folder,gribs[0], "0", steps )
-#     sst  = return_grib_data( products_folder,gribs[1], "0", steps )
-#     wave = return_grib_data( products_folder,gribs[2], "0", steps )
-#     u1000= return_grib_data( products_folder,gribs[3], "1000", steps )
-#     v1000= return_grib_data( products_folder,gribs[4], "1000", steps )
-#     # functions
-#         # convert T2m to Celsius
-#     T2m_C = t2m - 273.15
-#         # compute wspd
-#     wspd = mv.sqrt(u1000**2+v1000**2)
-#         # convert wspd to km/h
-#     wspd_to_km_h = wspd*3.6
-#         # convert wspd to Knots
-#     wspd_to_KT   = wspd* 1.944
-#         # compute wind chill for O Celsius
-#     wind_chill_0 = 13.12 + 0.6215 * T2m_C - 11.37* wspd_to_km_h**0.16 + 0.3965* T2m_C* wspd_to_km_h**0.16
-#     # compute wind chill for -15 Celsius
-#     wind_chill_m15 = 13.12 + 0.6215* T2m_C - 11.37* wspd_to_km_h**0.16 + 0.3965* T2m_C* wspd_to_km_h**0.16
-#     # get contours
-#     chill_0_contour     = contours_dict[contours[0]]
-#     chill_m15_contour   = contours_dict[contours[1]]
-#     wspd_contour        = contours_dict[contours[2]]
-#     wave_contour        = contours_dict[contours[3]]
-#     sst_contour         = contours_dict[contours[4]]
-#     # rest
-#     data_legend = legends_dict[legend]
-#     data_map    = geoviews_dict[maps]
-#     data_txt    = texts_dict[text]
-#     data_coast  = coastlines_dict[coast]
-#     return data_map,sst,sst_contour,wind_chill_0,chill_0_contour,data_coast,wind_chill_m15,chill_m15_contour,wspd_to_KT,wspd_contour,wave,wave_contour, data_legend, data_txt
 
 # Sea Temperature def
 def sst_def(products_folder, gribs, contours, coast, maps, legend, text, level, steps ):
@@ -1389,17 +1356,6 @@ products_dict = {
                                     "coastlines": "cream",
                                     "legend"    : "black",
                                     "text"      : "synop",
-                                    "wind"      : ""
-                                    },
-
-                   "Critical limits" :{
-                                    "function"  : critical_def,
-                                    "gribs"     : ["2 metre temperature","Sea surface temperature","Significant height of combined wind waves and swell","U component of wind","V component of wind"],
-                                    "contours"  : ["wind_chill_0","wind_chill_m15","wind_chill_wspd","wind_chill_wave","wind_chill_Tsea"],
-                                    "map"       : "Mediterranean",
-                                    "coastlines": "cream_land",
-                                    "legend"    : "cri_limits",
-                                    "text"      : "cri_limits",
                                     "wind"      : ""
                                     },
 

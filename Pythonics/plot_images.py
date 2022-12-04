@@ -18,13 +18,6 @@ today = datetime.now().strftime("%Y%m%d")
 time  =  datetime.now().strftime("%H")
 print(today,time)
 
-# if int(time) < 17:
-#     run_folder = "0000"
-# else:
-#     run_folder = "1200"
-
-# products_folder = output_folder +"/"+ today +"/"+ run_folder + "/"
-# print(products_folder)
 
 # 3 hour steps
 time_steps = gbl._STEPS

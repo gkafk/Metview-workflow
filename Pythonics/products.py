@@ -1,4 +1,7 @@
 # !/usr/bin/python3
+'''
+Functions and dictionaries for producing images.
+'''
 import metview as mv
 import Contours
 import Coastlines
@@ -8,6 +11,7 @@ import Legends
 import Winds
 from datetime import datetime,date,timedelta
 import os
+# import local modules
 import globalVariables as gbl
 
 # Geopotential heights list
@@ -452,29 +456,6 @@ def opera_winds_def( products_folder, gribs, contours, coast, maps, legend, text
     coasts       = coastlines_dict[coast]
     return map_s, coasts, vect_3,wind_barbs_3,wspd3,oper_shade_3,vect_2,wind_barbs_2,wspd2,oper_shade_2,vect_1,wind_barbs_1,wspd1,oper_shade_1, legends, txt
 
-
-# Η συνάρτηση για τα opera wave
-# απαιτούμενα προϊόντα "Significant height of combined wind waves and swell","10 metre U wind component","10 metre V wind component"
-# def opera_wave_def( products_folder, gribs, contours, coast, maps, legend, text, level, steps ):
-#     # get grib data
-#     swh  = return_grib_data( products_folder,gribs[0], level, steps )
-#     u    = return_grib_data( products_folder,gribs[1], level, steps )
-#     v    = return_grib_data( products_folder,gribs[2], level, steps )
-#
-#     # προσθέτω τα wind barbs
-#     vect      =  wind_barbs_def(u,v)
-#     vect_data = wind_compute(u,v)
-#     # get contours
-#     oper_shade_1  = contours_dict[contours[0]]
-#     oper_shade_2  = contours_dict[contours[1]]
-#     wind_barbs    = winds_dict[contours[2]]
-#
-#     # rest
-#     legends      = legends_dict[legend]
-#     map_s        = geoviews_dict[maps]
-#     txt          = texts_dict[text]
-#     coasts       = coastlines_dict[coast]
-#     return map_s, coasts, swh,oper_shade_1, vect_data, oper_shade_2,  vect , wind_barbs,legends, txt
 
 
 # Weather simple
@@ -1000,17 +981,6 @@ products_dict = {
                                     "wind"      : ""
                                     },
 
-                   # "Opera" :{
-                   #                  "function"  : opera_def,
-                   #                  "gribs"     : ["Total precipitation","Visibility", "Low cloud cover","Cloud base height"],
-                   #                  "contours"  : ["opera_preci","opera_visibility","opera_LCC","opera_cloud_base"],
-                   #                  "map"       : "Mediterranean",
-                   #                  "coastlines": "opera",
-                   #                  "legend"    : "opera",
-                   #                  "text"      : "opera",
-                   #                  "wind"      : ""
-                   #                  },
-
 
                    "Opera winds" :{
                                     "function"  : opera_winds_def,
@@ -1024,16 +994,6 @@ products_dict = {
                                     },
 
 
-                   # "Opera wave" :{
-                   #                  "function"  : opera_wave_def,
-                   #                  "gribs"     : ["Significant height of combined wind waves and swell","10 metre U wind component","10 metre V wind component"],
-                   #                  "contours"  : ["opera_wave_swh","opera_wave_wind","wind_speed_1"],
-                   #                  "map"       : "Mediterranean",
-                   #                  "coastlines": "opera",
-                   #                  "legend"    : "opera_wave",
-                   #                  "text"      : "opera_wave",
-                   #                  "wind"      : ""
-                   #                  },
 
                    "Discomfort Index" :{
                                     "function"  : di_def,
@@ -1442,25 +1402,16 @@ texts_dict    = {
                 "stat_stab":Texts.stat_stab,
                 "run_diff":Texts.run_diff,
                 "therm_wind":Texts.therm_wind,
-                "cri_limits":Texts.cri_limits,
                 "light_radar":Texts.light_radar
               }
 
 
 # Maps's dictionary
 geoviews_dict = {
-                "Hellas":Geoviews.greece,
-                "Mediterranean":Geoviews.mediterra,
-                "Europe":Geoviews.euro_cyli,
                 "Euro polar":Geoviews.euro_polar,
-                #"Xios":Geoviews.Xios_cylin ,
-                #"Limnos_Mitilini":Geoviews.Limnos_Mitilini_cylin,
-                #"Rodos":Geoviews.Rodos_cylin,
-                #"Crete":Geoviews.Crete_cylin ,
-                #"North":Geoviews.North_cylin,
-                #"W_of_Cyprus":Geoviews.W_of_Cyprus_cylin,
-                #"T_North":Geoviews.T_North_cylin ,
-                #"T_South":Geoviews.T_South_cylin,
+                "Europe":Geoviews.euro_cyli,
+                "Mediterranean":Geoviews.mediterra,
+                "Hellas":Geoviews.greece,
                 "lights_radar":Geoviews.lights_radar,
                 }
 
@@ -1493,7 +1444,6 @@ legends_dict  = {
                 "wind_speed":Legends.wind_speed,"u10_wind_gust":Legends.u10_wind_gust,
                 "jet":Legends.jet,
                 "therm_wind":Legends.therm_wind,
-                "cri_limits":Legends.cri_limits,
                 }
 
 # Coastlines's dictionary

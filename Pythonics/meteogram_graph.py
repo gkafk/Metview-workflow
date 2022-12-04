@@ -13,37 +13,22 @@ import xarray as xr
 import os
 import tkinter
 from tkinter import *
+# import local modules
+import globalVariables as gbl
 
-output_folder = "/home/george/data/output"
-# date_var    = "20210516"
-# run_var     = "1200"
+# Merged grib files folder
+output_folder = gbl._OUTPUT_FOLDER
 levels_var  = "0"
 
-# steps1 = [ format(x,"2d") for x in range(3,120,3) ]
-# print(steps1)
+# Locations dictionary
+loc_dict =gbl._LOCATIONS_DICT
 
-loc_dict ={
-            "LGLR": [39.65, 22.46],
-            "LGBL": [39.21, 22.79],
-            "LGEL": [38.06, 23.55],            
-            "LGTS": [40.52, 22.97],
-            "LGTG": [38.33, 23.56],
-            "LGSA": [35.53, 24.14],
-            "LGRX": [38.14, 21.42],
-            "LGAD": [37.92, 21.29],
-            "LGKL": [37.07, 22.02],
-            "LGTL": [35.19, 25.33],
-            "LGSY": [38.97, 24.48],
-            "LGLM": [39.92, 25.23]
-           }
-
-# συνάρτηση για total precipitation
+#  για total precipitation
 def preci_def(dat):
     fields  = int( mv.count(dat) )
     dat     = (dat[1:fields] - dat[0:fields-1])*1000
     return dat
 
-# συνάρτηση για να σβήνει κρυφά αρχεία κτλ από λίστα
 def remove_hidden_files(lista):
     for item in lista[:]:
         if item.startswith(".") or "ERROR" in item:
@@ -219,7 +204,7 @@ def metgram_def(coords_list,days,cw_name):
     )
     
       
-    #============================================= θερμοκρασία ================================================
+    #============================================= temperature ================================================
     
     # read a set of t2m and t2d forecast steps from a GRIB file
     t2m = return_grib_data("2 metre temperature",steps)
@@ -287,7 +272,7 @@ def metgram_def(coords_list,days,cw_name):
                         legend_text_font_size = 0.4
                         )
 
-    #=============================================  υετός ==================================================
+    #=============================================  precipitation ==================================================
     
     # read a set of preci forecast steps from a GRIB file
     preci = return_grib_data("Total precipitation",steps)
@@ -419,7 +404,7 @@ def metgram_def(coords_list,days,cw_name):
 date_list =sorted( os.listdir(output_folder) ,reverse=True )
 remove_hidden_files(date_list)
 
-# δίνει τα ορίσματα για να καλέσει το μετεώγραμμα
+# Sets args to call meteogram
 def metgram_run(*args):
     cw_name   = str(cws_var.get())
     cw   = loc_dict[cw_name]
@@ -437,19 +422,19 @@ def metg_by_coords_def():
         message_def(coords.get())  
         metgram_def(coords_,days,"Unonymous")
     else:
-        message_def(" Πρέπει να δώσετε συντεταγμένες σημείου lat,lon πχ: 39.36, 21.42 ")    
+        message_def("   Must set point coordinates lat,lon eg: 39.36, 21.42   ")    
     
     
-#λίστα με τις ώρες των τρεξιμάτων του ευρωπαϊκού κέντρου
+# ECMWF run times
 run_list = ["0000","1200"]
 
 #===================================================================================================
-#                Γραφικό περιβάλλον
+#                Graphs
 #===================================================================================================
 
 root = Tk()
 root.geometry("400x300")
-root.title("METEO ATA Meteograms v2.1")
+root.title("METEO  Meteograms v2.1")
 root.iconphoto(True,PhotoImage(file='meteogram.png'))
 # root.call("wm","iconphoto",root._w,PhotoImage(file="/home/metview/metview/System/Pythonics/pmk.png"))
 

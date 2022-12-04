@@ -265,27 +265,7 @@ mis = mv.mlegend(
           legend_border_colour      = "blue"
           )
 
-opera = mv.mlegend(
-          legend_title              = "on",
-          legend_title_text         = "Βάση νεφών ft - Ποσότητα χαμηλών νεφών  -  Ορατότητα m -   Υετός mm ",
-          legend_title_font_size    = 0.30,
-          legend_display_type       = "disjoint",
-          legend_title_orientation  = "horizontal",
-          legend_text_composition   = "USER_TEXT_ONLY",
-          legend_user_lines         = ["<= 3000 FT",">= BKN","5000 m","2 mm", "5 mm", "10 mm", "20 mm", "50 mm", "150 mm"],
-          legend_units_text         = "oC",
-          legend_title_position_ratio = 60.00,
-          legend_text_colour        = "blue",
-          legend_text_font_size     = default_text_size,
-          legend_box_mode           = "positional",
-          legend_box_x_position     = 0.5,
-          legend_box_y_position     = 0.1,
-          legend_box_x_length       = 27.00,
-          legend_box_y_length       = 1.00,
-          legend_border             = "off",
-          legend_entry_border       = "off",
-          legend_border_colour      = "blue"
-          )
+
 
 opera_winds = mv.mlegend(
           legend_title              = "on",
@@ -309,27 +289,7 @@ opera_winds = mv.mlegend(
           # legend_display_type       = "disjoint"
           )
 
-opera_wave = mv.mlegend(
-          legend_title              = "on",
-          legend_title_text         = "Άνεμος  και κύμα",
-          legend_title_font_size    = 0.30,
-          legend_title_orientation  = "horizontal",
-          legend_units_text         = "kt",
-          legend_title_position_ratio = 60.00,
-          legend_text_colour        = "blue",
-          legend_text_font_size     = default_text_size,
-          legend_box_mode           = "positional",
-          legend_box_x_position     = 6,
-          legend_box_y_position     = 0.1,
-          legend_box_x_length       = 15.00,
-          legend_box_y_length       = 1.0,
-          legend_border             = "off",
-          legend_entry_border       = "off",
-          legend_border_colour      = "blue",
-          legend_box_blanking       = "off",
-          # legend_display_type       = "histogram"
-          # legend_display_type       = "disjoint"
-          )
+
 
 stat_stab = mv.mlegend(
           legend_title              = "on",
@@ -664,7 +624,7 @@ u10_wind_gust= mv.mlegend(
            legend_border_colour      = "black"
            )
 
-# jet - αεροχείμαρρος
+# jet 
 jet = mv.mlegend(
            LEGEND_TITLE                = "ON",
            LEGEND_TITLE_TEXT           = "Jet",

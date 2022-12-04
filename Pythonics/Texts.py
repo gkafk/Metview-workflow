@@ -335,10 +335,10 @@ opera_wave = mv.mtext(
     )
 
 mis_txt = mv.mtext(
-    text_lines          = ["ΜΕΤΕΟ ΑΤΑ 3-ΩΡΟ <font colour='red'> <grib_info key='step'  where='shortName=hcc'/> </font> ",
+    text_lines          = ["TOTAL 3-hour <font colour='red'> <grib_info key='step'  where='shortName=hcc'/> </font> ",
                            "Lightnings <font colour='red'> ( +++ ) </font> ",
-                           "ΤΡΕΞΙΜΟ: <grib_info key='base-date' format='%d-%m-%Y %H:%M'  where='shortName=hcc'/>",
-                           "ΙΣΧΥΕΙ ΓΙΑ:  <font colour='red'> <grib_info key='valid-date' format='%a %d, %H:%M' where='shortName=hcc'/></font> "],
+                           "START TIME: <grib_info key='base-date' format='%d-%m-%Y %H:%M'  where='shortName=hcc'/>",
+                           "VALID TIME:  <font colour='red'> <grib_info key='valid-date' format='%a %d, %H:%M' where='shortName=hcc'/></font> "],
     text_justification  = 'left',
     text_font_size      = default_text_size,
     text_mode           = "positional",
@@ -540,22 +540,6 @@ u100_wind = mv.mtext(
     text_colour         = 'charcoal'
     )
 
-cri_limits = mv.mtext(
-    text_lines          = ["Critical limits STEP <font colour='red'> <grib_info key='step' where='shortName=u'/> </font> ",
-                           "START TIME: <grib_info key='base-date' format='%d-%m-%Y %H:%M'  where='shortName=u'/>",
-                           "VALID TIME:  <font colour='red'> <grib_info key='valid-date' format='%a %d, %H:%M'  where='shortName=u'/></font> "],
-    text_justification  = 'left',
-    text_font_size      = default_text_size,
-    text_mode           = "positional",
-    text_box_x_position = 0.2,
-    text_box_y_position = 1,
-    text_box_x_length   = 8,
-    text_box_y_length   = 2,
-    text_box_blanking   = "off",
-    text_border         = "off",
-    text_border_colour  = "rgb(0.11,0.11,0.41)",
-    text_colour         = 'charcoal'
-    )
 
 AH = mv.mtext(
     text_lines          = ["Absolute humidity STEP <font colour='black'> <grib_info key='step' where='shortName=r'/> </font> ",

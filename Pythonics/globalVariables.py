@@ -7,31 +7,31 @@ import os
 
 # Selecting hour steps
 _STEPS  = [ "3","to","120","by","3" ]
-# _STEPS= [ "3","to","75","by","3" ]
+# _STEPS = [ "3","to","75","by","3" ]
 # _STEPS = [ "0","to","9","by","3" ]
 
 
 #  European Airports coorfinates Lat,Lon
-_LOCATIONS_DICT ={
+_LOCATIONS_DICT = {
             "LIRA": [41.80, 12.59],
             "LFPO": [48.72, 02.39],
             "LEMD": [40.49, -03.58],
             "LPPT": [38.76, -09.13],
             "EFHK": [60.3, 24.9],
-           }
+}
 
 
 
 # [From , To , Steps*3]
-_ROUTES_LIST=[
+_ROUTES_LIST = [
             ["LGAV","LEMD",5],
             ["LGAV","EFHK",5],
-            ]
+]
 
 
 # forecasting Images for production with plot_images.py
-# ********** [Name ,         geopotential height, steps]****************
 # Uncomment lists lines for activating their production
+#           [Name ,         geopotential height, steps]
 _PRODUCTS = [
             ["Temperature",             "850",  _STEPS],
             ["Temperature 500",         "500",  _STEPS],
@@ -87,12 +87,9 @@ _PRODUCTS = [
             #["Precipitation type",      "0"  ,  _STEPS],
             #["Total precipitation rate","0"  ,  _STEPS],
             #["MIS",                     "0",    _STEPS],
-            #["Critical limits",         "0",    _STEPS],
-            #["Run Difference",          "500",  _STEPS],
+            #["Run Difference",          "500",  _STEPS], # needs 2 runs
             ["Potential vorticity isentropic","315",  _STEPS],
         ]
-
-
 
 
 # Geopotential height levels

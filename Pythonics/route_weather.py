@@ -304,20 +304,7 @@ def main():
             multi_proc.start()
             multi_proc.join()
 
-    # try:
-    #     for item in products:
-    #         try:
-    #             #export_products(item[0],item[1],item[2])
-    #             print(datetime.now()," - ", item[0],item[1])
-    #             multi_proc = multiprocessing.Process(target=cross_section_run,args=([item[0],item[1],istep],[U_V,rh,rh_level,preci],))
-    #             multi_proc.start()
-    #             multi_proc.join()
-    #         except Exception as e:
-    #             print(datetime.now()," - Errror in  ", item[0],item[1])
-    #             print(e,traceback.print_exc())
-    # except Exception as e:
-    #     print(e,traceback.print_exc())
-    #     # pass
+
     end_time = datetime.now()
     print(datetime.now().strftime("%Y-%m-%d %H:%M:%S")," - Route weather maps production ended in %s seconds" % (end_time - start_time))
 

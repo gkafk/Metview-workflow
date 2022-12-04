@@ -1,4 +1,9 @@
 # !/usr/bin/python3
+'''
+Execute instide metview environment.
+Opens graphical panel for viewing ecmwf grib files.
+Needs merged grib files of the same variable.
+'''
 import metview as mv
 import xarray as xr
 import os
@@ -8,7 +13,8 @@ import math
 from datetime import date,timedelta
 import tkinter
 from tkinter import *
-# import local  moduless
+
+# import local modules
 from products import *
 import globalVariables as gbl
 
@@ -32,8 +38,6 @@ def remove_hidden_files(lista):
         if item.startswith(".") or "ERROR" in item:
             lista.remove(item)
 
-
-
 # ECMWF Logo
 organizations_image=mv.mimport(
     import_file_name    = "ECMWF_Master_Logo.png",
@@ -42,7 +46,6 @@ organizations_image=mv.mimport(
     import_width        = 2.0,
     import_height       = 0.4
     )
-
 
 # MV Logo
 mv_image=mv.mimport(
@@ -55,6 +58,7 @@ mv_image=mv.mimport(
 
 # Locations dictionary
 loc_dict =gbl._LOCATIONS_DICT
+
 #===================================================================================================
 #        Buttons values init
 #===================================================================================================
@@ -315,7 +319,6 @@ root = Tk()
 root.geometry("860x600") #width x height
 root.title("Panel metview v3.0")
 root.iconphoto(True,PhotoImage(file='Metview_logo.png'))
-#root.call("wm","iconphoto",root._w,PhotoImage(file="/home/metview/metview/System/Pythonics/pmk.png"))
 
 cross_section_frame  = LabelFrame(root,text="Cross Section",labelanchor="ne" ,bd=2,bg="grey",width=750,height=200,relief='sunken',pady=5,padx=5)
 cross_section_frame.grid(row=5,column=0,rowspan=5,columnspan=8, sticky = "NESW")

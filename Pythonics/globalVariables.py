@@ -5,11 +5,6 @@ Set global variables and names for directories for all python scripts
 import os
 
 
-# grib files directory
-_OUTPUT_FOLDER = "/data/output"
-# images exporting directory
-_IMAGES_EXPORT_DIR ="/data/images/"
-
 # Selecting hour steps
 _STEPS  = [ "3","to","120","by","3" ]
 # _STEPS= [ "3","to","75","by","3" ]
@@ -18,19 +13,6 @@ _STEPS  = [ "3","to","120","by","3" ]
 
 #  European Airports coorfinates Lat,Lon
 _LOCATIONS_DICT ={
-            #"LGLR": [39.65, 22.46],
-            #"LGBL": [39.21, 22.79],
-            #"LGEL": [38.06, 23.55],
-            #"LGTS": [40.52, 22.97],
-            #"LGTG": [38.33, 23.56],
-            #"LGSA": [35.53, 24.14],
-            #"LGRX": [38.14, 21.42],
-            #"LGAD": [37.92, 21.29],
-            #"LGKL": [37.07, 22.02],
-            #"LGTL": [35.19, 25.33],
-            #"LGSY": [38.97, 24.48],
-            #"LGLM": [39.92, 25.23],
-            #"LGAV": [37.93, 23.93],
             "LIRA": [41.80, 12.59],
             "LFPO": [48.72, 02.39],
             "LEMD": [40.49, -03.58],
@@ -42,14 +24,9 @@ _LOCATIONS_DICT ={
 
 # [From , To , Steps*3]
 _ROUTES_LIST=[
-            # ["LGAV","LGLM",5],
-            # ["LGAV","LIRA",5],
-            # ["LGAV","LFPO",5],
             ["LGAV","LEMD",5],
             ["LGAV","EFHK",5],
             ]
-
-
 
 
 # forecasting Images for production with plot_images.py
@@ -135,9 +112,9 @@ for line in lines:
     # print("start line:",line)
     line=line.strip("\n'")
     if line.startswith("_OUTPUT_FOLDER"):
-        _OUTPUT_FOLDER = line.split("=")[1].strip('"')
-        print("OUTPUT_FOLDER:",_OUTPUT_FOLDER)
+        _OUTPUT_FOLDER = os.path.expantuser(line.split("=")[1].strip('"'))
+        print("_OUTPUT_FOLDER:",_OUTPUT_FOLDER)
     if line.startswith("_EXPORT_IMAGES_FOLDER"):
-        _IMAGES_EXPORT_DIR = line.split("=")[1].strip('"')
-        print("IMAGES_EXPORT_DIR:",_IMAGES_EXPORT_DIR)
+        _IMAGES_EXPORT_DIR = os.path.expantuser(line.split("=")[1].strip('"'))
+        print("_IMAGES_EXPORT_DIR:",_IMAGES_EXPORT_DIR)
 bash_conf_file.close()

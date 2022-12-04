@@ -8,7 +8,7 @@ import math
 from datetime import date,timedelta
 import tkinter
 from tkinter import *
-# import local ata moduless
+# import local  moduless
 from products import *
 import globalVariables as gbl
 
@@ -34,7 +34,6 @@ def remove_hidden_files(lista):
 
 
 
-
 # ECMWF Logo
 organizations_image=mv.mimport(
     import_file_name    = "ECMWF_Master_Logo.png",
@@ -55,20 +54,7 @@ mv_image=mv.mimport(
     )
 
 # Locations dictionary
-loc_dict ={
-            "LGLR": [39.65, 22.46],
-            "LGBL": [39.21, 22.79],
-            "LGEL": [38.06, 23.55],
-            "LGTS": [40.52, 22.97],
-            "LGTG": [38.33, 23.56],
-            "LGSA": [35.53, 24.14],
-            "LGRX": [38.14, 21.42],
-            "LGAD": [37.92, 21.29],
-            "LGKL": [37.07, 22.02],
-            "LGTL": [35.19, 25.33],
-            "LGSY": [38.97, 24.48],
-            "LGLM": [39.92, 25.23]
-           }
+loc_dict =gbl._LOCATIONS_DICT
 #===================================================================================================
 #        Buttons values init
 #===================================================================================================
@@ -323,7 +309,7 @@ cross_section_products = ["Relative humidity", "Divergence","Potential vorticity
 
 
 #===================================================================================================
-#               Γραφικό περιβάλλον
+#               Graphs
 #===================================================================================================
 root = Tk()
 root.geometry("860x600") #width x height
@@ -585,7 +571,7 @@ def plotter(*args):
     print("products_folder:",products_folder)
     # gribs to be used
     gribs           = products_dict[product_name]["gribs"]
-    # φορτώνω τις default_values του προϊόντος, αν υπάρχουν, για την πρώτη φορά που επιλέγω το προϊόν.
+    # loading products default values, if exist, for the first time choosing the product 
     if  defaults_flag == True :
         product_level   = panel_products_dict[category][product_name]["default_level"]
         # contours to be used
@@ -693,7 +679,7 @@ def return_fields_list(prod,steps):
     # mv.write(prod+".grib",all)
     return all
 
-# Επιστρέφει τα δεδομένα του grib για τα steps που επιλέγξαμε
+# Returns gribs datashets for choosen steps
 def return_grib_datas(prod,steps,levs="0"):
     grib_path   = output_folder +"/" + str(date_var.get()) +"/"+str(run_var.get()) +"/"+ prod +"/"+ levs
     grib        = os.listdir(grib_path)
@@ -703,7 +689,10 @@ def return_grib_datas(prod,steps,levs="0"):
         data    = mv.read(data =data, step=steps)
         return data
 
-#  Συνάρτηση για cross Section
+
+# ---------------------------------------------------------------------------------------------------------------------------------
+#   cross Section function 
+# ---------------------------------------------------------------------------------------------------------------------------------
 def cross_section_run(*args):
     # step_var = int(step.get())
     crossline = [38.87,21.06,39.95,23.46] #lat,lon,lat,lon
@@ -714,8 +703,6 @@ def cross_section_run(*args):
         origin=str(from_var.get())
         destination=str(to_var.get())
         crossline = loc_dict[origin]+loc_dict[destination]
-    # else:
-    #     crossline = [38.87,21.06,39.95,23.46] #lat,lon,lat,lon
     print(repr(crossline))
     Horizontal_Axis = mv.maxis(
                               AXIS_TICK_LABEL_HEIGHT = 0.4
@@ -863,13 +850,16 @@ def cross_section_run(*args):
                 dw[1],coastlines,data_rev,contours_3, vis_line, graph_line ,right_map_text,legend,
                 dw[2], all_1, contours,orog_graph,U_V,wind_style)
 
-# Συνάρτηση για meteograms
+
+# ---------------------------------------------------------------------------------------------------------------------------------
+#  meteograms function
+# ---------------------------------------------------------------------------------------------------------------------------------
 def metgram_def(coords_list,days,cw_name):
     days        = days
     hours       = str(24*days+3)
     steps = [ "3","to",hours,"by","3" ]
 
-    #================================================ υγρασία ================================================
+    #================================================ humidity ================================================
 
     delta = 0.3
     # The vertical hovmoeller module takes an area as an input.
@@ -903,19 +893,6 @@ def metgram_def(coords_list,days,cw_name):
     # print(mv.values(hv_wind))
 
 
-    # # RH_1 = mv.mcont(
-    # r_cont = mv.mcont(
-    #    LEGEND                       = "ON",
-    #    CONTOUR                      = "OFF",
-    #    CONTOUR_LEVEL_SELECTION_TYPE = "LEVEL_LIST",
-    #    CONTOUR_LEVEL_LIST           = [70,80,90,100,110 ],
-    #    CONTOUR_LABEL_HEIGHT         = 0.3,
-    #    CONTOUR_SHADE                = "ON",
-    #    CONTOUR_SHADE_COLOUR_METHOD  = "LIST",
-    #    CONTOUR_SHADE_METHOD         = "AREA_FILL",
-    #    CONTOUR_SHADE_COLOUR_LIST    = [ "RGB(0.9333,0.9333,0.9333)","RGB(0.7176,0.7176,0.7176)","RGB(0.3825,0.2906,0.98)","RGB(0.1169,0.005676,0.959)","RGB(0.0107,0.3957,0.8991)","RGB(0.06621,0.6375,0.9926)","RGB(0.01176,1,0.4894)","RGB(0.06862,1,0.01961)","RGB(0.6514,1,0.003922)","RGB(0.9205,0.9687,0.003815)" ]
-    #    )
-
 
     # RH_1 = mv.mcont(
     r_cont = mv.mcont(
@@ -941,7 +918,7 @@ def metgram_def(coords_list,days,cw_name):
         WIND_FLAG_LENGTH         = 0.5,
         WIND_FLAG_ORIGIN_MARKER  = "OFF",
         WIND_FLAG_THICKNESS      = 1.5,
-        # WIND_ADVANCED_METHOD     = "ON",          #ta kanei xromatista
+        # WIND_ADVANCED_METHOD     = "ON",          # colouring
         # wind_flag_min_speed      = 8.00,
         # legend = "on"
     )
@@ -1013,7 +990,7 @@ def metgram_def(coords_list,days,cw_name):
     )
 
 
-    #============================================= θερμοκρασία ================================================
+    #============================================= temperature ================================================
 
     # read a set of t2m and t2d forecast steps from a GRIB file
     t2m = return_grib_datas("2 metre temperature",steps)
@@ -1081,7 +1058,7 @@ def metgram_def(coords_list,days,cw_name):
                         legend_text_font_size = 0.4
                         )
 
-    #=============================================  υετός ==================================================
+    #=============================================  precipitation ==================================================
 
     # read a set of preci forecast steps from a GRIB file
     preci_dat = return_grib_datas("Total precipitation",steps)
@@ -1214,7 +1191,7 @@ def metgram_def(coords_list,days,cw_name):
 date_list =sorted( os.listdir(output_folder) ,reverse=True )
 remove_hidden_files(date_list)
 
-# δίνει τα ορίσματα για να καλέσει το μετεώγραμμα
+# sets arguments to call meteogram 
 def metgram_run(*args):
     cw_name   = str(cws_var.get())
     cw   = loc_dict[cw_name]
@@ -1232,7 +1209,7 @@ def metg_by_coords_def():
         message_def(coords.get())
         metgram_def(coords_,days,"Unonymous")
     else:
-        message_def("  Πρέπει να δώσετε συντεταγμένες σημείου lat,lon πχ: 39.36, 21.42  ")
+        message_def("  Must set point coordinates lat,lon eg: 39.36, 21.42  ")
 
 
 def message_def(mes):
@@ -1244,7 +1221,7 @@ def message_def(mes):
 #     subprocess.Popen("/home/metview/metview/System/Pythonics/meteogramma.py",shell=False)
 
 #===================================================================================================
-#           κλήσεις συναρτήσεων από κουμπιά
+#           calling functions buttons
 #===================================================================================================
 
 #levels_var.trace("w", runner)

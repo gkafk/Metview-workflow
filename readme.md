@@ -59,6 +59,8 @@
         - metgram.py script exports meteogram images to images dierctory.
         - cross_section.py script exports cross-section images to images dierctory.
         - panel.py script opens a graphical environment for choosing and viewing grib products in metview plot environment.
+     ![panel image](panel.png)   
+     ![plot image](plot.png)   
 
     1. Configure global_variables.cfg file according to your pc configuration.
     2. Configure globalVariables.py for desired images production.

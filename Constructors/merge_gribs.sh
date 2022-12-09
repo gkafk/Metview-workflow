@@ -17,11 +17,13 @@ source $(dirname $0)/global_variables.cfg
 
 # folders--------------------------------------------------------------------------------------
 
-DATA_FOLDER=$_DATA_FOLDER
-INPUT_FOLDER=$_INPUT_FOLDER
-INPUT_DB_FOLDER=$_INPUT_DB_FOLDER
-OUTPUT_FOLDER=$_OUTPUT_FOLDER
-LOGS_FOLDER=$_LOGS_FOLDER
+DATA_FOLDER=${_DATA_FOLDER/%$'\r'/}
+INPUT_FOLDER=${_INPUT_FOLDER/%$'\r'/}
+INPUT_DB_FOLDER=${_INPUT_DB_FOLDER/%$'\r'/}
+OUTPUT_FOLDER=${_OUTPUT_FOLDER/%$'\r'/}
+LOGS_FOLDER=${_LOGS_FOLDER/%$'\r'/}
+CONDA_SH=${_CONDA_SH/%$'\r'/}
+CONDA_ENV_NAME=${_CONDA_ENV_NAME/%$'\r'/}
 
 
 #********************************************************************************************
@@ -29,9 +31,10 @@ LOGS_FOLDER=$_LOGS_FOLDER
 #********************************************************************************************
 
 eval "$(conda shell.bash hook)"
-# source /home/metview/miniconda3/etc/profile.d/conda.sh
-source "$_CONDA_SH"
-conda activate $_CONDA_ENV_NAME
+# source ~/miniconda3/etc/profile.d/conda.sh
+source $CONDA_SH
+conda activate $CONDA_ENV_NAME
+echo `conda info --envs`
 
 #--------------------------------------------------------------------------------------------
 

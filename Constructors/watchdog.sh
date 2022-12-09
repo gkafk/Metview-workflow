@@ -18,11 +18,13 @@ source $(dirname $0)/global_variables.cfg
 
 # folders--------------------------------------------------------------------------------------
 
-DATA_FOLDER=$_DATA_FOLDER
-INPUT_FOLDER=$_INPUT_FOLDER
-INPUT_DB_FOLDER=$_INPUT_DB_FOLDER
-LOGS_FOLDER=$_LOGS_FOLDER
-SCRIPTS_FOLDER=$_SCRIPTS_FOLDER
+DATA_FOLDER=${_DATA_FOLDER/%$'\r'/}
+INPUT_FOLDER=${_INPUT_FOLDER/%$'\r'/}
+INPUT_DB_FOLDER=${_INPUT_DB_FOLDER/%$'\r'/}
+LOGS_FOLDER=${_LOGS_FOLDER/%$'\r'/}
+SCRIPTS_FOLDER=${_SCRIPTS_FOLDER/%$'\r'/}
+CONDA_SH=${_CONDA_SH/%$'\r'/}
+CONDA_ENV_NAME=${_CONDA_ENV_NAME/%$'\r'/}
 
 # scripts paths---------------------------------------------------------------------------------
 merge_script=$SCRIPTS_FOLDER/merge_gribs.sh
@@ -47,8 +49,9 @@ HOUR=$(date +"%H")
 # #********************************************************************************************
 
 eval "$(conda shell.bash hook)"
-source $_CONDA_SH
-conda activate $_CONDA_ENV_NAME
+# source ~/miniconda3/etc/profile.d/conda.sh
+source $CONDA_SH
+conda activate $CONDA_ENV_NAME
 
 
 # Write output to log file

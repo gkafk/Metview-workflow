@@ -38,7 +38,7 @@
     
     Configure global_variables.cfg file according to your pc configuration.   
     
-    $./add_jobs_to_cron.sh to start the installation.
+    $./add_jobs_to_cron.sh to start the cron installation and files and folders creations and copies.
 
 
 

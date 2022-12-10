@@ -1,0 +1,342 @@
+1. Geopotential Height
+2. Geopotential Height/1000
+3. Geopotential Height/700
+4. Geopotential Height/925
+5. Geopotential Height/500
+6. Geopotential Height/200
+7. Geopotential Height/300
+8. Geopotential Height/850
+9. Geopotential Height/400
+10. Geopotential Height/100
+11. Geopotential Height/150
+12. Geopotential Height/950
+13. Geopotential Height/900
+14. Geopotential Height/50
+15. Geopotential Height/800
+16. 10 metre V wind component
+17. 10 metre V wind component/0
+18. Low cloud cover
+19. Low cloud cover/0
+20. Convective available potential energy
+21. Convective available potential energy/0
+22. High cloud cover
+23. High cloud cover/0
+24. Sea surface temperature
+25. Sea surface temperature/0
+26. Medium cloud cover
+27. Medium cloud cover/0
+28. Large-scale precipitation
+29. Large-scale precipitation/0
+30. Total precipitation
+31. Total precipitation/0
+32. Visibility
+33. Visibility/0
+34. 10 metre U wind component
+35. 10 metre U wind component/0
+36. Surface pressure
+37. Surface pressure/0
+38. 100 metre V wind component
+39. 100 metre V wind component/0
+40. 100 metre U wind component
+41. 100 metre U wind component/0
+42. Snowfall
+43. Snowfall/0
+44. U component of wind
+45. U component of wind/150
+46. U component of wind/400
+47. U component of wind/100
+48. U component of wind/925
+49. U component of wind/50
+50. U component of wind/850
+51. U component of wind/900
+52. U component of wind/200
+53. U component of wind/1000
+54. U component of wind/950
+55. U component of wind/700
+56. U component of wind/300
+57. U component of wind/500
+58. U component of wind/800
+59. 2 metre dewpoint temperature
+60. 2 metre dewpoint temperature/0
+61. Temperature
+62. Temperature/300
+63. Temperature/1000
+64. Temperature/700
+65. Temperature/500
+66. Temperature/200
+67. Temperature/400
+68. Temperature/925
+69. Temperature/850
+70. Temperature/100
+71. Temperature/800
+72. Temperature/950
+73. Temperature/900
+74. Temperature/150
+75. Temperature/50
+76. V component of wind
+77. V component of wind/150
+78. V component of wind/400
+79. V component of wind/100
+80. V component of wind/925
+81. V component of wind/50
+82. V component of wind/850
+83. V component of wind/900
+84. V component of wind/200
+85. V component of wind/1000
+86. V component of wind/950
+87. V component of wind/700
+88. V component of wind/300
+89. V component of wind/500
+90. V component of wind/800
+91. Maximum temperature at 2 metres in the last 6 hours
+92. Maximum temperature at 2 metres in the last 6 hours/0
+93. Convective precipitation
+94. Convective precipitation/0
+95. Total cloud cover
+96. Total cloud cover/0
+97. Relative humidity
+98. Relative humidity/300
+99. Relative humidity/1000
+100. Relative humidity/925
+101. Relative humidity/500
+102. Relative humidity/700
+103. Relative humidity/200
+104. Relative humidity/850
+105. Relative humidity/400
+106. Relative humidity/100
+107. Relative humidity/900
+108. Relative humidity/950
+109. Relative humidity/800
+110. Relative humidity/150
+111. Relative humidity/50
+112. Mean sea level pressure
+113. Mean sea level pressure/0
+114. 2 metre temperature
+115. 2 metre temperature/0
+116. Minimum temperature at 2 metres in the last 6 hours
+117. Minimum temperature at 2 metres in the last 6 hours/0
+118. Geopotential
+119. Geopotential/0
+120. Vertical velocity
+121. Vertical velocity/500
+122. Vertical velocity/850
+123. Vertical velocity/700
+124. Vertical velocity/300
+125. Vertical velocity/1000
+126. Vertical velocity/925
+127. Vertical velocity/400
+128. Vertical velocity/200
+129. Vertical velocity/100
+130. Vertical velocity/150
+131. Vertical velocity/900
+132. Vertical velocity/950
+133. Vertical velocity/50
+134. Vertical velocity/800
+135. 0 degrees C isothermal level (atm)
+136. 0 degrees C isothermal level (atm)/0
+137. Cloud base height
+138. Cloud base height/0
+139. Vorticity (relative)
+140. Vorticity (relative)/500
+141. Vorticity (relative)/850
+142. Vorticity (relative)/300
+143. Vorticity (relative)/700
+144. Vorticity (relative)/925
+145. Vorticity (relative)/1000
+146. Vorticity (relative)/200
+147. Vorticity (relative)/400
+148. Vorticity (relative)/100
+149. Vorticity (relative)/800
+150. Vorticity (relative)/950
+151. Vorticity (relative)/900
+152. Potential vorticity
+153. Potential vorticity/300
+154. Potential vorticity/500
+155. Potential vorticity/700
+156. Potential vorticity/850
+157. Potential vorticity/925
+158. Potential vorticity/1000
+159. Potential vorticity/200
+160. Potential vorticity/400
+161. Potential vorticity/100
+162. Potential vorticity/800
+163. Potential vorticity/900
+164. Potential vorticity/950
+165. Divergence
+166. Divergence/925
+167. Divergence/700
+168. Divergence/850
+169. Divergence/300
+170. Divergence/500
+171. Divergence/200
+172. Divergence/400
+173. Divergence/1000
+174. Divergence/100
+175. Divergence/900
+176. Divergence/800
+177. Divergence/950
+178. Significant height of combined wind waves and swell
+179. Significant height of combined wind waves and swell/0
+180. Mean wave period
+181. Mean wave period/0
+182. Mean wave direction
+183. Mean wave direction/0
+184. Significant height of wind waves
+185. Significant height of wind waves/0
+186. Significant height of total swell
+187. Significant height of total swell/0
+188. Mean direction of wind waves
+189. Mean direction of wind waves/0
+190. Mean period of total swell
+191. Mean period of total swell/0
+192. Mean direction of total swell
+193. Mean direction of total swell/0
+194. Peak wave period
+195. Peak wave period/0
+196. Coefficient of drag with waves
+197. Coefficient of drag with waves/10
+198. Precipitation type
+199. Precipitation type/0
+200. V component of wind
+201. V component of wind/200
+202. V component of wind/600
+203. V component of wind/100
+204. V component of wind/950
+205. V component of wind/800
+206. V component of wind/900
+207. V component of wind/700
+208. V component of wind/250
+209. V component of wind/1000
+210. V component of wind/400
+211. V component of wind/300
+212. V component of wind/500
+213. V component of wind/925
+214. V component of wind/850
+215. V component of wind/150
+216. V component of wind/50
+217. V component of wind/70
+218. V component of wind/10
+219. V component of wind/30
+220. V component of wind/20
+221. V component of wind/3
+222. V component of wind/7
+223. V component of wind/1
+224. V component of wind/2
+225. V component of wind/5
+226. V component of wind/330
+227. V component of wind/370
+228. V component of wind/350
+229. V component of wind/315
+230. V component of wind/2000
+231. V component of wind/395
+232. V component of wind/1500
+233. V component of wind/475
+234. U component of wind
+235. U component of wind/200
+236. U component of wind/600
+237. U component of wind/100
+238. U component of wind/950
+239. U component of wind/800
+240. U component of wind/900
+241. U component of wind/700
+242. U component of wind/250
+243. U component of wind/1000
+244. U component of wind/400
+245. U component of wind/300
+246. U component of wind/500
+247. U component of wind/925
+248. U component of wind/850
+249. U component of wind/150
+250. U component of wind/50
+251. U component of wind/70
+252. U component of wind/10
+253. U component of wind/30
+254. U component of wind/20
+255. U component of wind/3
+256. U component of wind/7
+257. U component of wind/1
+258. U component of wind/2
+259. U component of wind/5
+260. U component of wind/330
+261. U component of wind/370
+262. U component of wind/350
+263. U component of wind/315
+264. U component of wind/2000
+265. U component of wind/395
+266. U component of wind/1500
+267. U component of wind/475
+268. Large-scale precipitation
+269. Large-scale precipitation/0
+270. Total precipitation rate
+271. Total precipitation rate/0
+272. K index
+273. K index/0
+274. Instantaneous total lightning flash density
+275. Instantaneous total lightning flash density/0
+276. Total column vertically-integrated water vapour
+277. Total column vertically-integrated water vapour/0
+278. Cloud base height
+279. Cloud base height/0
+280. Convective rain rate
+281. Convective rain rate/0
+282. Convective inhibition
+283. Convective inhibition/0
+284. Evaporation
+285. Evaporation/0
+286. Surface sensible heat flux
+287. Surface sensible heat flux/0
+288. Convective available potential energy shear
+289. Convective available potential energy shear/0
+290. Surface latent heat flux
+291. Surface latent heat flux/0
+292. Total totals index
+293. Total totals index/0
+294. Large scale rain rate
+295. Large scale rain rate/0
+296. Averaged total lightning flash density in the last hour
+297. Averaged total lightning flash density in the last hour/0
+298. Instantaneous surface sensible heat flux
+299. Instantaneous surface sensible heat flux/0
+300. Instantaneous moisture flux
+301. Instantaneous moisture flux/0
+302. Vertically integrated moisture divergence
+303. Vertically integrated moisture divergence/0
+304. Pressure
+305. Pressure/2000
+306. Pressure/315
+307. Pressure/370
+308. Pressure/350
+309. Pressure/330
+310. Pressure/1500
+311. Pressure/300
+312. Pressure/600
+313. Pressure/475
+314. Pressure/395
+315. Pressure/850
+316. Potential vorticity
+317. Potential vorticity/315
+318. Potential vorticity/370
+319. Potential vorticity/330
+320. Potential vorticity/350
+321. Potential vorticity/300
+322. Potential vorticity/475
+323. Potential vorticity/395
+324. Potential vorticity/850
+325. Potential vorticity/600
+326. Potential temperature
+327. Potential temperature/2000
+328. Potential temperature/1500
+329. 10 metre wind gust in the last 6 hours
+330. 10 metre wind gust in the last 6 hours/0
+331. 10 metre wind gust in the last 3 hours
+332. 10 metre wind gust in the last 3 hours/0
+333. Averaged total lightning flash density in the last 3 hours
+334. Averaged total lightning flash density in the last 3 hours/0
+335. Maximum total precipitation rate in the last 3 hours
+336. Maximum total precipitation rate in the last 3 hours/0
+337. Maximum total precipitation rate in the last 6 hours
+338. Maximum total precipitation rate in the last 6 hours/0
+339. Maximum CAPE in the last 6 hours
+340. Maximum CAPE in the last 6 hours/0
+341. Maximum CAPES in the last 6 hours
+342. Maximum CAPES in the last 6 hours/0

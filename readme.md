@@ -62,8 +62,12 @@
         - metgram.py script exports meteogram images to images dierctory.
         - cross_section.py script exports cross-section images to images dierctory.
         - panel.py script opens a graphical environment for choosing and viewing grib products in metview plot environment.
-         $ conda activate (your metview environment) 
-         $ python3 panel.py
+        
+             $ conda activate (your metview environment)
+             
+             cd to Pythonics directory
+             
+             $ python3 panel.py
 
      ![panel image](panel.png)   
      ![plot image](plot.png)   

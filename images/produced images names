@@ -1,0 +1,55 @@
+Temperature", "850"
+"Temperature 500",   "500"
+"2 metre temperature",     "0",
+"10m Wind speed",    "0",
+"10m Wind gust",     "0",
+"Cloud base height", "0",
+"Total cloud cover", "0",
+"Total precipitation",     "0",
+"Preci - Lightnings","0",
+"Preci - snow","0",
+"Snowfall",    "0",
+"Relative humidity", "200"
+"Relative humidity", "300"
+"Relative humidity", "500"
+"Relative humidity", "700"
+"Relative humidity", "850"
+"Relative humidity", "925"
+"Relative humidity", "1000",
+"Absolute humidity", "1000",
+"Mean sea level pressure", "0",
+"Sea surface temperature", "0",
+"Visibility",  "0",
+"Discomfort Index",  "0",
+"Total wave",  "0",
+"Wind speed",  "200"
+"Wind speed",  "300"
+"Wind speed",  "500"
+"Wind speed",  "700"
+"Wind speed",  "850"
+"Wind speed",  "925"
+"Wind speed",  "1000",
+"Jet",   "200"
+"Jet",   "300"
+"T-advection", "500"
+"T-advection", "700"
+"T-advection", "850"
+"Potential vorticity",     "500"
+"Potential vorticity",     "700"
+"Potential vorticity",     "850"
+"Relative vorticity","500"
+"Thermal wind","500"
+"Thermal wind","700"
+"Thermal wind","850"
+"Static stability",  "500"
+"Static stability",  "700"
+"Static stability",  "850"
+"Lightnings radar",  "0"
+"Lightnings AVG3H",  "0"
+"Lightnings instant","0"
+"Zero level",  "0"
+"Precipitation type","0"
+"Total precipitation rate","0"
+"MIS",   "0",
+"Run Difference",    "500"
+"Potential vorticity isentropic","315"

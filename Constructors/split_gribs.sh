@@ -33,14 +33,17 @@ OUTPUT_FOLDER=${_OUTPUT_FOLDER/%$'\r'/}
 LOGS_FOLDER=${_LOGS_FOLDER/%$'\r'/}
 CONDA_SH=${_CONDA_SH/%$'\r'/}
 CONDA_ENV_NAME=${_CONDA_ENV_NAME/%$'\r'/}
-
-
+echo $(dirname $0)
+echo $DATA_FOLDER
+echo $CONDA_SH
+echo $CONDA_ENV_NAME
+# exit 0
 #********************************************************************************************
 #  It is madatory to activate conda fisrt, for using eccodes tools in metview environment
 #********************************************************************************************
 
 eval "$(conda shell.bash hook)"
-# source ~/miniconda3/etc/profile.d/conda.sh
+# source /home/metview/miniconda3/etc/profile.d/conda.sh
 source $CONDA_SH
 conda activate $CONDA_ENV_NAME
 echo `conda info --envs`
@@ -97,7 +100,8 @@ function make_products_from_grib(){
       # get levels from grib file
       VARIABLE_LEVELS=$(grib_get -w name="$NAME" -p level $filename)
       #echo "variable levels:$VARIABLE_LEVELS"
-      # If file name begins L2S then add L2S in front of file name.
+      # Case of 2nd grib files package with same variable names.
+      # If file name begins L2S then add L2_ in front of file name.
       if [[ $filename == L2S* ]];
       then
         dir="L2_$dir"

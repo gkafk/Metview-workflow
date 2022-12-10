@@ -25,6 +25,9 @@
         or from conda-forge with:
         $ conda install metview-python -c conda-forge
 
+        Maybe needed to be installed netcdf4 and scipy 
+        $ conda install -c conda-forge netcdf4 scipy 
+
 
 
 - Install
@@ -59,6 +62,9 @@
         - metgram.py script exports meteogram images to images dierctory.
         - cross_section.py script exports cross-section images to images dierctory.
         - panel.py script opens a graphical environment for choosing and viewing grib products in metview plot environment.
+         $ conda activate (your metview environment) 
+         $ python3 panel.py
+
      ![panel image](panel.png)   
      ![plot image](plot.png)   
 

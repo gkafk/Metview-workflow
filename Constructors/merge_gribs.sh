@@ -31,7 +31,7 @@ CONDA_ENV_NAME=${_CONDA_ENV_NAME/%$'\r'/}
 #********************************************************************************************
 
 eval "$(conda shell.bash hook)"
-# source ~/miniconda3/etc/profile.d/conda.sh
+# source /home/metview/miniconda3/etc/profile.d/conda.sh
 source $CONDA_SH
 conda activate $CONDA_ENV_NAME
 echo `conda info --envs`

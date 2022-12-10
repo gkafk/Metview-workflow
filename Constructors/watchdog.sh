@@ -23,6 +23,7 @@ INPUT_FOLDER=${_INPUT_FOLDER/%$'\r'/}
 INPUT_DB_FOLDER=${_INPUT_DB_FOLDER/%$'\r'/}
 LOGS_FOLDER=${_LOGS_FOLDER/%$'\r'/}
 SCRIPTS_FOLDER=${_SCRIPTS_FOLDER/%$'\r'/}
+PYTHONICS_FOLDER=${_PYTHONICS_FOLDER/%$'\r'/}
 CONDA_SH=${_CONDA_SH/%$'\r'/}
 CONDA_ENV_NAME=${_CONDA_ENV_NAME/%$'\r'/}
 
@@ -30,14 +31,14 @@ CONDA_ENV_NAME=${_CONDA_ENV_NAME/%$'\r'/}
 merge_script=$SCRIPTS_FOLDER/merge_gribs.sh
 # send_to_server_script=$SCRIPTS_FOLDER/send_to_server.sh
 
+# Number of files sending ECMWF
+EXPECT_FILES=${_EXPECT_FILES/%$'\r'/}
 
 # watcher logs file
 # create log file if not exists
 touch $LOGS_FOLDER/processes.log || exit
 processes=$LOGS_FOLDER/processes.log
 
-# Number of files sending ECMWF
-EXPECT_FILES=$_EXPECT_FILES
 
 DATE=$(date +"%Y%m%d")
 
@@ -48,11 +49,9 @@ HOUR=$(date +"%H")
 # It is madatory to activate conda fisrt, for using eccodes tools in metview environment
 # #********************************************************************************************
 
-eval "$(conda shell.bash hook)"
-# source ~/miniconda3/etc/profile.d/conda.sh
 source $CONDA_SH
 conda activate $CONDA_ENV_NAME
-
+echo `conda info --envs`
 
 # Write output to log file
 exec >> $LOGS_FOLDER/watchdog.log 2>&1
@@ -87,16 +86,16 @@ echo "$(date  +'%Y-%m-%d %H:%M:%S') - Checking for folders not in processes"
 
 for folder in `ls $INPUT_DB_FOLDER`
 do
-  for sub_f in `ls $INPUT_DB_FOLDER$folder`
+  for sub_f in `ls $INPUT_DB_FOLDER/$folder`
   do
     echo -n "$(date  +'%Y-%m-%d %H:%M:%S') - checking $folder $sub_f"
     if ! grep -Fq "$folder $sub_f" $processes;then
       echo -e "\n$(date  +'%Y-%m-%d %H:%M:%S') - $folder $sub_f not in log."
-      WORKING_FOLDER="$INPUT_DB_FOLDER$folder"
+      WORKING_FOLDER="$INPUT_DB_FOLDER/$folder"
       WORKING_FOLDER_NAME="$folder"
       break
     else
-      WORKING_FOLDER=$INPUT_DB_FOLDER$DATE
+      WORKING_FOLDER=$INPUT_DB_FOLDER/$DATE
       WORKING_FOLDER_NAME="$DATE"
       echo '. Ok is in log'
     fi
@@ -147,7 +146,7 @@ if [[ `ls` ]]; then
         # Producing png images
         #********************************************************************************************
         if [ "$_CREATE_FORECAST_IMAGES" == "YES" ];then
-          cd "$_PYTHONICS_FOLDER"
+          cd "$PYTHONICS_FOLDER"
           # Executing plot_images.py with 2 arguments: day folder and run folder for forecasting maps production
           python3 plot_images.py $WORKING_FOLDER_NAME $sub_folder
           # Write in  $processes the end of forecasting maps production
@@ -159,7 +158,7 @@ if [[ `ls` ]]; then
         fi
 
         if [ "$_CREATE_METEOGRAMS" == "YES" ];then
-          cd "$_PYTHONICS_FOLDER"
+          cd "$PYTHONICS_FOLDER"
           # Executing metgram.py with 2 arguments: day folder and run folder for meteograms production
           python3 metgram.py $WORKING_FOLDER_NAME $sub_folder &
           # Write in  $processes the end of meteograms production
@@ -171,7 +170,7 @@ if [[ `ls` ]]; then
         fi
 
         if [ "$_CREATE_ROUTE_WEATHER_MAPS" == "YES" ];then
-          cd "$_PYTHONICS_FOLDER"
+          cd "$PYTHONICS_FOLDER"
           # Executing route_weather.py with 2 arguments: day folder and run folder for route weather production
           python3 route_weather.py $WORKING_FOLDER_NAME $sub_folder &
           # Write in  $processes the end of route weather production
@@ -185,7 +184,7 @@ if [[ `ls` ]]; then
         wait
 
         #********************************************************************************************
-        # send to another server
+        # send images to another server
         #********************************************************************************************
         if [ "$_SEND_IMAGES" == "YES" ];then
           bash $send_to_server_script >> $LOGS_FOLDER/send_to_server.log
@@ -205,7 +204,7 @@ if [[ `ls` ]]; then
           echo "$(date  +'%Y-%m-%d %H:%M:%S') - $day $run $num Process has ended with probmlem"
           echo "$(date  +'%Y-%m-%d %H:%M:%S') - Starting producing forecast images, meteograms and route weather maps again"
           echo "End word: $end"
-          cd "$_PYTHONICS_FOLDER"
+          cd "$PYTHONICS_FOLDER"
           python3 plot_images.py $WORKING_FOLDER_NAME $sub_folder
           python3 metgram.py $WORKING_FOLDER_NAME $sub_folder
           python3 route_weather.py $WORKING_FOLDER_NAME $sub_folder

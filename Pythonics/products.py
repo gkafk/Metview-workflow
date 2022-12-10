@@ -1434,7 +1434,7 @@ legends_dict  = {
                 "light_instant":Legends.light_instant,
                 "light_av1h":Legends.light_av1h,
                 "light_yr":Legends.light_yellow_red,
-                "opera":Legends.opera, "opera_winds":Legends.opera_winds, "opera_wave":Legends.opera_wave,
+                "opera_winds":Legends.opera_winds,
                 "t_advection":Legends.t_advection,
                 "stat_stab":Legends.stat_stab,
                 "zero_level":Legends.zero_level,

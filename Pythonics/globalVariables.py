@@ -11,7 +11,7 @@ _STEPS  = [ "3","to","120","by","3" ]
 # _STEPS = [ "0","to","9","by","3" ]
 
 
-#  European Airports coorfinates Lat,Lon
+#  European Airports coorfinates Lat,Lon. Add your locations
 _LOCATIONS_DICT = {
             "LIRA": [41.80, 12.59],
             "LFPO": [48.72, 02.39],
@@ -22,7 +22,7 @@ _LOCATIONS_DICT = {
 
 
 
-# [From , To , Steps*3]
+# [From , To , Steps*3] Add routes you need.
 _ROUTES_LIST = [
             ["LGAV","LEMD",5],
             ["LGAV","EFHK",5],
@@ -55,7 +55,6 @@ _PRODUCTS = [
             #["Mean sea level pressure", "0",    _STEPS],
             #["Sea surface temperature", "0",    _STEPS],
             #["Visibility",              "0",    _STEPS],
-            #["Opera",                   "0",    _STEPS],
             #["Discomfort Index",        "0",    _STEPS],
             #["Total wave",              "0",    _STEPS],
             #["Wind speed",              "200",  _STEPS],
@@ -109,9 +108,9 @@ for line in lines:
     # print("start line:",line)
     line=line.strip("\n'")
     if line.startswith("_OUTPUT_FOLDER"):
-        _OUTPUT_FOLDER = os.path.expantuser(line.split("=")[1].strip('"'))
+        _OUTPUT_FOLDER = os.path.expanduser(line.split("=")[1].strip('"'))
         print("_OUTPUT_FOLDER:",_OUTPUT_FOLDER)
     if line.startswith("_EXPORT_IMAGES_FOLDER"):
-        _IMAGES_EXPORT_DIR = os.path.expantuser(line.split("=")[1].strip('"'))
+        _IMAGES_EXPORT_DIR = os.path.expanduser(line.split("=")[1].strip('"'))
         print("_IMAGES_EXPORT_DIR:",_IMAGES_EXPORT_DIR)
 bash_conf_file.close()

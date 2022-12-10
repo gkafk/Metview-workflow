@@ -36,7 +36,7 @@
     
     cd Constructors
     
-    Configure global_variables.cfg file according to your pc configuration.   
+    Configure global_variables.cfg file according to your pc configuration if you need to change.   
     
     $./add_jobs_to_cron.sh to start the cron installation and files and folders creations and copies.
 

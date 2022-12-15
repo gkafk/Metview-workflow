@@ -58,10 +58,10 @@ Uses ECMWF Metview for automated weather forecasting images production or for gr
 
     - Pythonics directory:
         Contains python scripts for producing forecasting maps, using ECMWF metview and metview-python interface.
-        - plot_images.py script exports forecasting images to images directory.
+        - plot_images.py script exports selected forecasting images to images directory.
         - metgram.py script exports meteogram images to images dierctory.
         - cross_section.py script exports cross-section images to images dierctory.
-        - panel.py script opens a graphical environment for choosing and viewing grib products in metview plot environment.
+        - panel.py script opens a graphical environment for viewing grib products in metview plot environment.
         
              $ conda activate (your metview environment)
              

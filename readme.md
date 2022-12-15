@@ -62,6 +62,7 @@ Uses ECMWF Metview for automated weather forecasting images production or for gr
         - metgram.py script exports meteogram images to images dierctory.
         - cross_section.py script exports cross-section images to images dierctory.
         - panel.py script opens a graphical environment for viewing grib products in metview plot environment.
+             usage:
         
              $ conda activate (your metview environment)
              

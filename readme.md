@@ -70,6 +70,10 @@ Uses ECMWF Metview for automated weather forecasting images production or for gr
                  cd to Pythonics directory
              
                  $ python3 panel.py
+                 
+                 or
+                 
+                 double click panel.py in metview environment
 
      ![panel image](panel.png)   
      ![plot image](plot.png)   

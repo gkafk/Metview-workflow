@@ -73,7 +73,7 @@ Uses ECMWF Metview for automated weather forecasting images production or for gr
                  
                  or
                  
-                 double click panel.py in metview environment
+                 double click panel.py script icon inside metview environment.
 
      ![panel image](panel.png)   
      ![plot image](plot.png)   

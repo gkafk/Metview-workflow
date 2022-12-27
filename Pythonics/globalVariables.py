@@ -79,7 +79,6 @@ _PRODUCTS = [
             #["Static stability",        "500",  _STEPS],
             #["Static stability",        "700",  _STEPS],
             #["Static stability",        "850",  _STEPS],
-            #["Lightnings radar",        "0"  ,  _STEPS],
             #["Lightnings AVG3H",        "0"  ,  _STEPS],
             #["Lightnings instant",      "0"  ,  _STEPS],
             #["Zero level",              "0"  ,  _STEPS],

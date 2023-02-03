@@ -385,31 +385,6 @@ def preci_lights_def( products_folder, gribs, contours, coast, maps, legend, tex
     coasts       = coastlines_dict[coast]
     return map_s, coasts, preci ,preci_contour,lights,light_contour, legends, txt
 
-# Η συνάρτηση για τα οπερα
-# απαιτούμενα προϊόντα Total precipitation,low cloud coverage,visibility, cloud base height
-# def opera_def( products_folder, gribs, contours, coast, maps, legend, text, level, steps ):
-#     # get grib data
-#     preci   = return_grib_data( products_folder,gribs[0], level, steps )
-#     preci   = preci_compute(preci)
-#     # fields  = int( mv.count(preci) )
-#     # preci   = (preci[1:fields] - preci[0:fields-1])*1000
-#     vis     = return_grib_data( products_folder,gribs[1], level, steps )
-#     lcc     = return_grib_data( products_folder,gribs[2], level, steps )
-#     bas     = return_grib_data( products_folder,gribs[3], level, steps )
-#     # get contours
-#     preci_contour= contours_dict[contours[0]]
-#     vis_contour  = contours_dict[contours[1]]
-#     lcc_contour  = contours_dict[contours[2]]
-#     bas_contour  = contours_dict[contours[3]]
-#     # rest
-#     legends      = legends_dict[legend]
-#     map_s        = geoviews_dict[maps]
-#     txt          = texts_dict[text]
-#     coasts       = coastlines_dict[coast]
-#     return map_s, coasts,preci, preci_contour, vis, vis_contour, lcc, lcc_contour, bas, bas_contour, legends, txt
-
-
-
 #  winds at heights
 #  gribs needed "U component of wind","V component of wind"
 def opera_winds_def( products_folder, gribs, contours, coast, maps, legend, text, level, steps ):

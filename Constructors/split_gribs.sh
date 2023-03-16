@@ -101,7 +101,7 @@ function make_products_from_grib(){
       VARIABLE_LEVELS=$(grib_get -w name="$NAME" -p level $filename)
       #echo "variable levels:$VARIABLE_LEVELS"
       # Case of 2nd grib files package with same variable names.
-      # If file name begins L2S then add L2_ in front of file name.
+      # If file name starts with something else like L2S*** then add L2_ or whatever in front of file name.
       if [[ $filename == L2S* ]];
       then
         dir="L2_$dir"

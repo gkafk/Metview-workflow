@@ -75,7 +75,6 @@ blue = mv.mcoast(
           )
 
 meteo = mv.mcoast(
-           # MAP_COASTLINE_RESOLUTION        = "MEDIUM",
            MAP_COASTLINE_LAND_SHADE        = "ON",
            MAP_COASTLINE_LAND_SHADE_COLOUR = "RGB(97,80,62)",
            MAP_COASTLINE_SEA_SHADE         = "ON",
@@ -141,7 +140,6 @@ white = mv.mcoast(
 mis_bg = mv.mcoast(
            MAP_COASTLINE_THICKNESS         = 1.5,
            MAP_COASTLINE_LAND_SHADE        = "ON",
-           # MAP_COASTLINE_LAND_SHADE_COLOUR = "CREAM",
            MAP_COASTLINE_LAND_SHADE_COLOUR = "#bffab6",
            MAP_COASTLINE_SEA_SHADE         = "ON",
            MAP_COASTLINE_SEA_SHADE_COLOUR  = "RGB(0.8843,0.9353,0.9353)",

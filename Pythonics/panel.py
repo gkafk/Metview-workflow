@@ -1148,15 +1148,7 @@ def metgram_def(coords_list,days,cw_name):
                         text_lines         = ["Total Precipitation"],
                         text_justification = "CENTRE",
                         text_colour        = "CHARCOAL")
-    # εικόνα ΠΜΚ
-    organizations_image=mv.mimport(
-        import_file_name    = "pmk_1.png",
-        import_x_position   = 1,
-        import_y_position   = 9,
-        import_width        = 1,
-        import_height       = 1
 
-        )
 
 
     page_h = mv.plot_page(
@@ -1190,7 +1182,6 @@ def metgram_def(coords_list,days,cw_name):
     os.remove("_hv_v.nc")
     os.remove("_hv_wind.nc")
 
-#date_list =[str(today)]
 date_list =sorted( os.listdir(output_folder) ,reverse=True )
 remove_hidden_files(date_list)
 
@@ -1219,10 +1210,6 @@ def message_def(mes):
      message.configure(text="{}".format( mes ))
 
 
-# def open_metgrams():
-#     # os.system("/home/metview/metview/System/Pythonics/meteogramma.py 1")
-#     subprocess.Popen("/home/metview/metview/System/Pythonics/meteogramma.py",shell=False)
-
 #===================================================================================================
 #           calling functions buttons
 #===================================================================================================
@@ -1244,11 +1231,6 @@ cross_section_button.grid( row=7,column=2,columnspan=4,padx=5,pady=5 )
 
 metg_button = Button( metgram_frame,text="Met by coords", font=('Arial', 12), fg="blue", justify="center",width=10,command = metg_by_coords_def )
 metg_button.grid( row=2,column=4 )
-
-# meteogram_button = Button( root ,text="Meteogram", font=('Arial', 12), fg="black", justify="center",width=10,command = open_metgrams )
-# meteogram_button.grid( row=4,column=5,padx=5,pady=5 )
-
-
 
 
 #===================================================================================================
